@@ -59,7 +59,6 @@ def perform
   #end
   client2 = client_stream_log
   topics = "#macron"
-  
   client2.filter(track: topics) do |object|
     client.follow(object.user) if object.is_a?(Twitter::Tweet)
     client.favorite(object) if object.is_a?(Twitter::Tweet)
